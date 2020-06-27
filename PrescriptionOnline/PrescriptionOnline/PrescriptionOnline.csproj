@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PrescriptioOnline.Core\PrescriptioOnline.Core.csproj" />
+  </ItemGroup>
+
 </Project>

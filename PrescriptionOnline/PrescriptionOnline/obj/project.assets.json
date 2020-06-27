@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "PrescriptioOnline.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "PrescriptioOnline.Database": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PrescriptioOnline.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PrescriptioOnline.Core.dll": {}
+        }
+      },
+      "PrescriptioOnline.Database/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/PrescriptioOnline.Database.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PrescriptioOnline.Database.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "PrescriptioOnline.Core/1.0.0": {
+      "type": "project",
+      "path": "../PrescriptioOnline.Core/PrescriptioOnline.Core.csproj",
+      "msbuildProject": "../PrescriptioOnline.Core/PrescriptioOnline.Core.csproj"
+    },
+    "PrescriptioOnline.Database/1.0.0": {
+      "type": "project",
+      "path": "../PrescriptioOnline.Database/PrescriptioOnline.Database.csproj",
+      "msbuildProject": "../PrescriptioOnline.Database/PrescriptioOnline.Database.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "PrescriptioOnline.Core >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Pieter\\.nuget\\packages\\": {},
@@ -39,7 +76,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Pieter\\Documents\\GitHub\\PrescriptionOnline\\PrescriptionOnline\\PrescriptioOnline.Core\\PrescriptioOnline.Core.csproj": {
+              "projectPath": "C:\\Users\\Pieter\\Documents\\GitHub\\PrescriptionOnline\\PrescriptionOnline\\PrescriptioOnline.Core\\PrescriptioOnline.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
