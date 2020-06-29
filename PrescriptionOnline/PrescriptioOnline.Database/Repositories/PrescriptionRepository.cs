@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace PrescriptioOnline.Database
@@ -12,5 +13,10 @@ namespace PrescriptioOnline.Database
         {
 
         }
+        public IEnumerable<Prescription> GetAllPrescriptions()
+        {
+            return DbSet.Include(x=>x.Medicines).Select(x => x);
+        }
+       
     }
 }

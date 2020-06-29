@@ -28,6 +28,9 @@ namespace PrescriptionOnline
         {
             services.AddControllersWithViews();
             services.AddDbContext<PrescriptionOnlineDbContext>(options=> options.UseSqlServer("Server=.;Database=PrescriptionOnlineDatabase;Trusted_Connection=True;"));
+            services.AddTransient<IDoctorRepository, DoctorRepository>();
+            services.AddTransient<IPrescriptionRepository, PrescriptionRepository>();
+            services.AddTransient<IMedicineRepository, MedicineRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace PrescriptioOnline.Database
 {
-    public abstract class BaseRepository<Entity> where Entity : class
+    public abstract class BaseRepository<Entity> where Entity : BaseEntity
     {
         protected PrescriptionOnlineDbContext _DbContext;
         protected abstract DbSet<Entity> DbSet { get; }
@@ -24,9 +25,24 @@ namespace PrescriptioOnline.Database
 
             return list;
         }
-        public void SaveChanges()
+        public bool SaveChanges()
         {
-            _DbContext.SaveChanges();
+          return  _DbContext.SaveChanges()>0;
+        }
+        public bool AddNew(Entity entity)
+        {
+            DbSet.Add(entity);
+            return SaveChanges();
+        }
+        public bool Delete(Entity entity)
+        {
+            var foundEntity = DbSet.FirstOrDefault(x => x.Id == entity.Id);
+            if (foundEntity != null)
+            {
+                DbSet.Remove(foundEntity);
+                return SaveChanges();
+            }
+            return false;
         }
     }
 }
