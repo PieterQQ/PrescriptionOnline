@@ -6,7 +6,7 @@ namespace PrescriptionOnline.Controllers
 {
     public class PrescriptionController : Controller
     {
-        private int IndexOfDoctor { get; set; }
+        private  static int IndexOfDoctor { get; set; }
 
         public PrescriptionController()
         {
@@ -31,9 +31,18 @@ namespace PrescriptionOnline.Controllers
 
         public IActionResult View(int indexOfPrescription)
         {
-            return RedirectToAction("Index", "Medicine", new { indexOfDoctor = IndexOfDoctor, indexOfPrescription = indexOfPrescription }); ;
+            return RedirectToAction("Index", "Medicine", new { indexOfDoctor = IndexOfDoctor, indexOfPrescription = indexOfPrescription }); 
         }
-
+        public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(PrescriptionViewModel prescriptionVm)
+        {
+            TemporaryDatabase.Doctors.ElementAt(IndexOfDoctor).Prescriptions.Add(prescriptionVm);
+            return RedirectToAction("Index");
+        }
         public IActionResult Delete(int indexOfPrescription)
         {
             return View();

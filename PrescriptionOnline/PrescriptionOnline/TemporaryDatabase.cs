@@ -8,7 +8,7 @@ namespace PrescriptionOnline
 {
     public static class TemporaryDatabase
     {
-        public static List<DoctorViewModel> Doctors => new List<DoctorViewModel>
+        public static List<DoctorViewModel> Doctors { get; set; } = new List<DoctorViewModel>
         {
             new DoctorViewModel
             {
@@ -37,7 +37,7 @@ namespace PrescriptionOnline
                         {
                             new MedicineViewModel
                             {
-                                Name="Magnez"
+                                Name="Magnezz"
                             },
                             new MedicineViewModel
                             {
@@ -98,7 +98,7 @@ namespace PrescriptionOnline
                         {
                             new MedicineViewModel
                             {
-                                Name="Apap"
+                                Name="Test Lek"
                             },
                             new MedicineViewModel
                             {

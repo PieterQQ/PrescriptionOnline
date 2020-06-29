@@ -40,3 +40,6 @@ C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\Prescript
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\PrescriptionOnline.dll
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\PrescriptionOnline.pdb
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\PrescriptionOnline.genruntimeconfig.cache
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\Razor\Views\Home\Add.cshtml.g.cs
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\Razor\Views\Medicine\Add.cshtml.g.cs
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\Razor\Views\Prescription\Add.cshtml.g.cs

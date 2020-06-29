@@ -6,8 +6,9 @@ namespace PrescriptionOnline.Controllers
 {
     public class MedicineController : Controller
     {
-    
 
+        private static int IndexOfDoctor { get; set; }
+        private static int IndexOfPrescription { get; set; }
         public MedicineController()
         {
         
@@ -15,6 +16,8 @@ namespace PrescriptionOnline.Controllers
 
         public IActionResult Index(int indexOfDoctor, int indexOfPrescription,string filterString)
         {
+            IndexOfDoctor = indexOfDoctor;
+            IndexOfPrescription = indexOfPrescription;
             if (string.IsNullOrEmpty(filterString))
             {
                 return View(TemporaryDatabase.Doctors.ElementAt(indexOfDoctor).Prescriptions.ElementAt(indexOfPrescription));
@@ -27,7 +30,18 @@ namespace PrescriptionOnline.Controllers
                                                    .Contains(filterString.ToLower())).ToList()
             });
         }
-
+        public IActionResult Add()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(MedicineViewModel medicineVm)
+        {
+            TemporaryDatabase.Doctors.ElementAt(IndexOfDoctor)
+                .Prescriptions.ElementAt(IndexOfPrescription)
+                .Medicines.Add(medicineVm);
+            return RedirectToAction("Index");
+        }
         public IActionResult Delete(int indexOfMedicine)
         {
             return View();

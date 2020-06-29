@@ -1,7 +1,8 @@
 ﻿@model DoctorViewModel
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Prescription Page";
 }
+<a asp-controller="Prescription" asp-action="Add" class="btn btn-dark">  Add Prescription</a>
 <div>
     Doctor's Name: @Model.Name
 </div>
@@ -32,6 +33,7 @@
                         @(Model.Prescriptions.IndexOf(prescription) + 1)
                     </th>
                     <td>@prescription.Name</td>
+                   
                     <td>
                         <a asp-area="" asp-controller="Prescription" asp-action="View" asp-route-indexOfPrescription="@Model.Prescriptions.IndexOf(prescription)">View</a>
                         |
