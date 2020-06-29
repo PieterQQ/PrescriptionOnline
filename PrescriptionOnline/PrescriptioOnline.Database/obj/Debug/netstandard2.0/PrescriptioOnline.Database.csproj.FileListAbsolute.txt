@@ -6,3 +6,4 @@ C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\Prescript
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.AssemblyInfo.cs
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.dll
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.pdb
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.csproj.CoreCompileInputs.cache
