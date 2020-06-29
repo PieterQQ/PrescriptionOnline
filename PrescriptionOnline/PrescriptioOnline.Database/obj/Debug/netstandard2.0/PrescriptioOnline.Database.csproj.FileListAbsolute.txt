@@ -1,0 +1,9 @@
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\bin\Debug\netstandard2.0\PrescriptioOnline.Database.deps.json
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\bin\Debug\netstandard2.0\PrescriptioOnline.Database.dll
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\bin\Debug\netstandard2.0\PrescriptioOnline.Database.pdb
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.csprojAssemblyReference.cache
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.AssemblyInfoInputs.cache
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.AssemblyInfo.cs
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.csproj.CoreCompileInputs.cache
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.dll
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Database\obj\Debug\netstandard2.0\PrescriptioOnline.Database.pdb

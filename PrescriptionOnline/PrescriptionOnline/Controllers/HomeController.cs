@@ -1,37 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using PrescriptionOnline.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace PrescriptionOnline.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        
+        public HomeController()
         {
-            _logger = logger;
+            
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(TemporaryDatabase.Doctors);
         }
 
-        public IActionResult Privacy()
+        public IActionResult View(int indexOfDoctor)
         {
-            return View();
+            return RedirectToAction ("Index","Prescription", new { indexOfDoctor=indexOfDoctor });
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Delete(int indexOfDoctor)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(TemporaryDatabase.Doctors);
         }
+
+
+
     }
 }

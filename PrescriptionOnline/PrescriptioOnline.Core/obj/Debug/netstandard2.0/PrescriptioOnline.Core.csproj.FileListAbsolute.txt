@@ -1,0 +1,12 @@
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\bin\Debug\netstandard2.0\PrescriptioOnline.Core.deps.json
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\bin\Debug\netstandard2.0\PrescriptioOnline.Core.dll
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\bin\Debug\netstandard2.0\PrescriptioOnline.Core.pdb
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\bin\Debug\netstandard2.0\PrescriptioOnline.Database.dll
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\bin\Debug\netstandard2.0\PrescriptioOnline.Database.pdb
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.csprojAssemblyReference.cache
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.AssemblyInfoInputs.cache
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.AssemblyInfo.cs
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.csproj.CoreCompileInputs.cache
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.csproj.CopyComplete
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.dll
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.pdb
