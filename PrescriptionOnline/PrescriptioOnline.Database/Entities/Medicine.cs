@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PrescriptioOnline.Database
 {
@@ -12,5 +13,8 @@ namespace PrescriptioOnline.Database
         public decimal Price { get; set; }
         public int Amount { get; set; }
         public DateTime ExpirationDate { get; set; }
+        [ForeignKey("Prescription")]
+        public int PrescriptionId { get; set; }
+        public virtual Prescription Prescription { get; set; }
     }
 }
