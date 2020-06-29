@@ -14,9 +14,13 @@ namespace PrescriptionOnline.Controllers
             
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string filterString)
         {
-            return View(TemporaryDatabase.Doctors);
+            if (string.IsNullOrEmpty(filterString))
+            {
+                return View(TemporaryDatabase.Doctors);
+            }
+            return View(TemporaryDatabase.Doctors.Where(x => x.Name.ToLower().Contains(filterString.ToLower())).ToList());
         }
 
         public IActionResult View(int indexOfDoctor)

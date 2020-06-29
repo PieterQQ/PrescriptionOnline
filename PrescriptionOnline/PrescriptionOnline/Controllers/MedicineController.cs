@@ -13,9 +13,19 @@ namespace PrescriptionOnline.Controllers
         
         }
 
-        public IActionResult Index(int indexOfDoctor, int indexOfPrescription)
+        public IActionResult Index(int indexOfDoctor, int indexOfPrescription,string filterString)
         {
-            return View(TemporaryDatabase.Doctors.ElementAt(indexOfDoctor).Prescriptions.ElementAt(indexOfPrescription));
+            if (string.IsNullOrEmpty(filterString))
+            {
+                return View(TemporaryDatabase.Doctors.ElementAt(indexOfDoctor).Prescriptions.ElementAt(indexOfPrescription));
+            }
+            return View(new PrescriptionViewModel { 
+           
+                Name = TemporaryDatabase.Doctors.ElementAt(indexOfDoctor).Prescriptions.ElementAt(indexOfPrescription).Name,
+                Medicines = TemporaryDatabase.Doctors.ElementAt(indexOfDoctor).Prescriptions.ElementAt(indexOfPrescription)
+                                                .Medicines.Where(x => x.Name.ToLower()
+                                                   .Contains(filterString.ToLower())).ToList()
+            });
         }
 
         public IActionResult Delete(int indexOfMedicine)

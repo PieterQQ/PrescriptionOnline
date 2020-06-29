@@ -2,8 +2,11 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+    <form asp-controller="Home" asp-action="Index">
+        <input type="text" name="FilterString" />
+        <button type="submit" class="btn btn-danger">Filter</button>
+    </form>
 
-<input type="text" />
 <div class="text-center">
    <table class="table">
        <thead>
