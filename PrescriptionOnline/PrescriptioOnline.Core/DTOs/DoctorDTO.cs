@@ -8,7 +8,6 @@ namespace PrescriptioOnline.Core
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
-        public bool IsAbleToMakePrescriptions { get; set; }
         public IEnumerable<PrescriptionDTO> Prescriptions { get; set; }
     }
 }

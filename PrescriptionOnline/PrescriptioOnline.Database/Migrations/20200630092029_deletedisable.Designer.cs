@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PrescriptioOnline.Database;
 
 namespace PrescriptioOnline.Database.Migrations
 {
     [DbContext(typeof(PrescriptionOnlineDbContext))]
-    partial class PrescriptionOnlineDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200630092029_deletedisable")]
+    partial class deletedisable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
