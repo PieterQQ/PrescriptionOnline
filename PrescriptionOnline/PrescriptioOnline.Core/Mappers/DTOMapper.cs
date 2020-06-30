@@ -6,10 +6,10 @@ using System.Text;
 
 namespace PrescriptioOnline.Core
 {
-    public class DoctorsMappers
+    public class DTOMappers
     {
         private IMapper _mapper;
-        public DoctorsMappers()
+        public DTOMappers()
         {
             _mapper = new MapperConfiguration(config =>
             {

@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using PrescriptionOnline.Models;
+using PrescriptioOnline;
+using PrescriptioOnline.Core;
 using PrescriptioOnline.Database;
 
 namespace PrescriptionOnline
@@ -31,6 +33,9 @@ namespace PrescriptionOnline
             services.AddTransient<IDoctorRepository, DoctorRepository>();
             services.AddTransient<IPrescriptionRepository, PrescriptionRepository>();
             services.AddTransient<IMedicineRepository, MedicineRepository>();
+            services.AddTransient<DTOMappers>();
+            services.AddTransient<VMMapper>();
+            services.AddTransient<IDoctorManager, DoctorManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

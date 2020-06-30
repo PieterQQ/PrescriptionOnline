@@ -11,13 +11,13 @@ namespace PrescriptioOnline.Core
         private readonly IDoctorRepository _doctorRepository;
         private readonly IPrescriptionRepository _prescriptionRepository;
         private readonly IMedicineRepository _medicineRepository;
-        private readonly DoctorsMappers _doctorsMappers;
-        public DoctorManager(IDoctorRepository doctorRepository, IPrescriptionRepository prescriptionRepository, IMedicineRepository medicineRepository, DoctorsMappers doctorsMappers)
+        private readonly DTOMappers _DTOMappers;
+        public DoctorManager(IDoctorRepository doctorRepository, IPrescriptionRepository prescriptionRepository, IMedicineRepository medicineRepository, DTOMappers DTOMappers)
         {
             _doctorRepository = doctorRepository;
             _prescriptionRepository = prescriptionRepository;
             _medicineRepository = medicineRepository;
-            _doctorsMappers = doctorsMappers;
+            _DTOMappers = DTOMappers;
         }
         public IEnumerable<DoctorDTO> GetAllDoctors(string filterstring)
         {
@@ -27,7 +27,7 @@ namespace PrescriptioOnline.Core
                 doctorEntities = doctorEntities
                     .Where(x => x.FirstName.ToLower().Contains(filterstring.ToLower()) || x.LastName.ToLower().Contains(filterstring.ToLower()));
             }
-            return _doctorsMappers.Map(doctorEntities);
+            return _DTOMappers.Map(doctorEntities);
         }
         public IEnumerable<PrescriptionDTO> GetAllPrescriptionForADoctor(int doctorId, string filterstring)
         {
@@ -37,7 +37,7 @@ namespace PrescriptioOnline.Core
                 prescriptionEntities = prescriptionEntities
                     .Where(x => x.Name.ToLower().Contains(filterstring.ToLower()));
             }
-            return _doctorsMappers.Map(prescriptionEntities);
+            return _DTOMappers.Map(prescriptionEntities);
         }
         public IEnumerable<MedicineDTO> GetAllMedicineForAPrescription(int prescriptionId, string filterstring)
         {
@@ -49,18 +49,18 @@ namespace PrescriptioOnline.Core
                              || x.ActiveSubstance.ToLower().Contains(filterstring.ToLower())
                              || x.Producent.ToLower().Contains(filterstring.ToLower()));
             }
-            return _doctorsMappers.Map(medicineEntities);
+            return _DTOMappers.Map(medicineEntities);
         }
         public void AddNewMedicine(MedicineDTO medicine, int prescriptionId)
         {
-            var entity = _doctorsMappers.Map(medicine);
+            var entity = _DTOMappers.Map(medicine);
             entity.PrescriptionId = prescriptionId;
             _medicineRepository.AddNew(entity);
 
         }
         public void AddNewPrescription(PrescriptionDTO prescription, int DoctorId)
         {
-            var entity = _doctorsMappers.Map(prescription);
+            var entity = _DTOMappers.Map(prescription);
             entity.DoctorId = DoctorId;
             _prescriptionRepository.AddNew(entity);
 
@@ -68,27 +68,27 @@ namespace PrescriptioOnline.Core
         }
         public void AddNewDoctor(DoctorDTO doctor)
         {
-            var entity = _doctorsMappers.Map(doctor);
+            var entity = _DTOMappers.Map(doctor);
             _doctorRepository.AddNew(entity);
 
         }
 
         public bool DeleteMedicine(MedicineDTO medicine)
         {
-            var entity = _doctorsMappers.Map(medicine);
+            var entity = _DTOMappers.Map(medicine);
             return _medicineRepository.Delete(entity);
 
         }
         public bool DeletePrescription(PrescriptionDTO prescription)
         {
-            var entity = _doctorsMappers.Map(prescription);
+            var entity = _DTOMappers.Map(prescription);
             return _prescriptionRepository.Delete(entity);
 
 
         }
         public bool DeleteDoctor(DoctorDTO doctor)
         {
-            var entity = _doctorsMappers.Map(doctor);
+            var entity = _DTOMappers.Map(doctor);
             return _doctorRepository.Delete(entity);
 
         }
