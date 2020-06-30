@@ -2,9 +2,10 @@
 @{
     ViewData["Title"] = "Prescription Page";
 }
-    <form asp-controller="Prescription" asp-action="Add">
-        <p>Name:</p>
-        <input type="text" name="Name" />
-        <button type="submit" class="btn btn-danger">Add</button>
-    </form>
+<form asp-controller="Prescription" asp-action="Add">
+    Name:
+    <input type="text" name="Name" />
+    Created At:  <input type="date" name="CreatedAt" />
+    <button type="submit" class="btn btn-danger">Add</button>
+</form>
 

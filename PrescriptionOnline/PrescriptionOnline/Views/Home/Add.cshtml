@@ -3,7 +3,13 @@
     ViewData["Title"] = "Home Page";
 }
     <form asp-controller="Home" asp-action="Add">
-        <p>Name:</p>
-        <input type="text" name="Name" />
+        <p>First Name:</p>
+        <input type="text" name="FirstName" />
+        <p>Last Name:</p>
+        <input type="text" name="LastName" />
+        <p>Phone Number:</p>
+        <input type="text" name="PhoneNumber" />
+        <p>Can make Prescriptions:</p>
+        <input type="checkbox" name="IsAbleToMakePrescriptions" />
         <button type="submit" class="btn btn-danger">Add</button>
     </form>
