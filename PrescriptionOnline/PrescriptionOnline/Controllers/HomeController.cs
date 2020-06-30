@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrescriptionOnline.Models;
+using PrescriptioOnline;
+using PrescriptioOnline.Core;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,19 +10,20 @@ namespace PrescriptionOnline.Controllers
     public class HomeController : Controller
     {
 
-        
-        public HomeController()
+        private readonly IDoctorManager _doctorManager;
+        private readonly VMMapper _vMMapper;
+
+        public HomeController(IDoctorManager doctorManager, VMMapper vMMapper)
         {
-            
+            _doctorManager = doctorManager;
+            _vMMapper = vMMapper;
         }
 
         public IActionResult Index(string filterString)
         {
-            if (string.IsNullOrEmpty(filterString))
-            {
-                return View(TemporaryDatabase.Doctors);
-            }
-            return View(TemporaryDatabase.Doctors.Where(x => x.Name.ToLower().Contains(filterString.ToLower())).ToList());
+            var doctorDtos = _doctorManager.GetAllDoctors(filterString);
+            var doctorViewModels = _vMMapper.Map(doctorDtos);
+            return View(doctorViewModels);
         }
         public IActionResult Add()
         {
@@ -29,17 +32,21 @@ namespace PrescriptionOnline.Controllers
         [HttpPost]
         public IActionResult Add(DoctorViewModel doctorVm)
         {
-            TemporaryDatabase.Doctors.Add(doctorVm);
+            var dto = _vMMapper.Map(doctorVm);
+            _doctorManager.AddNewDoctor(dto);
             return RedirectToAction("Index");
         }
-        public IActionResult View(int indexOfDoctor)
+        public IActionResult View(int doctorId)
         {
-            return RedirectToAction ("Index","Prescription", new {indexOfDoctor });
+            return RedirectToAction ("Index","Prescription", new { doctorId= doctorId });
         }
 
-        public IActionResult Delete(int indexOfDoctor)
+        public IActionResult Delete(int doctorId)
         {
-            return View(TemporaryDatabase.Doctors);
+            _doctorManager.DeleteDoctor(new DoctorDTO { Id = doctorId });
+            var doctorDtos = _doctorManager.GetAllDoctors(null);
+            var doctorViewModels = _vMMapper.Map(doctorDtos);
+            return View(doctorViewModels);
         }
 
 
