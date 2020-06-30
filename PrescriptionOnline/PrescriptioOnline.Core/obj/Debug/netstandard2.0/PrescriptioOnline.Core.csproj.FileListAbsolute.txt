@@ -6,7 +6,6 @@ C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\Prescript
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.csprojAssemblyReference.cache
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.AssemblyInfoInputs.cache
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.AssemblyInfo.cs
-C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.csproj.CoreCompileInputs.cache
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.csproj.CopyComplete
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.dll
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptioOnline.Core\obj\Debug\netstandard2.0\PrescriptioOnline.Core.pdb

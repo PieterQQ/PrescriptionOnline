@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lz9E2vlc/rSv5QkqHhEjXtTloG05UvjZA11aFKolaOOfEH/i78vGjY6+5Cf2+Jld1bnNgmkk8/ZwVTv/RGXPCQ==",
+  "dgSpecHash": "d1eclPYSVTv92GCyGFg+yYDJ1q1xkqPVKP4LC6AheSlkAJlhlI4MCP5Y5A14xWXGiAgfGM89wQrP5INaIzc5Sw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pieter\\Documents\\GitHub\\PrescriptionOnline\\PrescriptionOnline\\PrescriptioOnline.Core\\PrescriptioOnline.Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Pieter\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Pieter\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Pieter\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\Pieter\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
