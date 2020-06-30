@@ -45,12 +45,12 @@ namespace PrescriptionOnline.Controllers
         {
             var dto = _vMMapper.Map(prescriptionVm);
             _doctorManager.AddNewPrescription(dto, DoctorId);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { doctorId= DoctorId });
         }
         public IActionResult Delete(int prescriptionId)
         {
             _doctorManager.DeletePrescription(new PrescriptionDTO { Id = prescriptionId });
-            return View();
+            return RedirectToAction("Index", new { doctorId = DoctorId });
         }
 
 

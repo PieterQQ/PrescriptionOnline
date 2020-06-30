@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PrescriptioOnline.Database
 {
-    public abstract class BaseRepository<Entity> where Entity : BaseEntity
+    public abstract class BaseRepository<Entity>: IRepository<Entity> where Entity : BaseEntity
     {
         protected PrescriptionOnlineDbContext _DbContext;
         protected abstract DbSet<Entity> DbSet { get; }

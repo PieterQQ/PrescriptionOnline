@@ -46,7 +46,7 @@ namespace PrescriptionOnline.Controllers
             _doctorManager.DeleteDoctor(new DoctorDTO { Id = doctorId });
             var doctorDtos = _doctorManager.GetAllDoctors(null);
             var doctorViewModels = _vMMapper.Map(doctorDtos);
-            return View(doctorViewModels);
+            return RedirectToAction("Index");
         }
 
 

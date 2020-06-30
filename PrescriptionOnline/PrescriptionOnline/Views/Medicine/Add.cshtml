@@ -2,23 +2,23 @@
 @{
     ViewData["Title"] = "Medicine Page";
 }
-    <form asp-controller="Medicine" asp-action="Add">
-        <p>Name:</p>
-        <input type="text" name="Name" />
-        <p>Producent:</p>
-        <input type="text" name="Producent" />
-        <p>Active Substance:</p>
-        <input type="text" name="ActiveSubstance" />
-        <p>Expiration Date:</p>
-        <input type="date" name="ExpirationDate" />
-        <p>Weight:</p>
-        <input type="number" name="Weight" />
-        <p>Price:</p>
-        <input type="number" name="Price" />
-        <p>Amount:</p>
-        <input type="number" name="Amount" />
+<form asp-controller="Medicine" asp-action="Add">
+    Name:
+    <input type="text" name="Name" /><br />
+    Producent:
+    <input type="text" name="Producent" /><br />
+    Active Substance:
+    <input type="text" name="ActiveSubstance" /><br />
+    Expiration Date:
+    <input type="date" name="ExpirationDate" /><br />
+    Weight:
+    <input type="number" name="Weight" /><br />
+    Price:
+    <input type="number" name="Price" /><br />
+    Amount:
+    <input type="number" name="Amount" /><br />
 
 
-        <button type="submit" class="btn btn-danger">Add</button>
-    </form>
+    <button type="submit" class="btn btn-danger">Add</button>
+</form>
 

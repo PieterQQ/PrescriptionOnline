@@ -10,6 +10,7 @@ namespace PrescriptionOnline.Controllers
     {
         private readonly IDoctorManager _doctorManager;
         private readonly VMMapper _vMMapper;
+        private static int DoctorId { get; set; }
         private static int PrescriptionId { get; set; }
         public MedicineController(IDoctorManager doctorManager, VMMapper vMMapper)
         {
@@ -19,6 +20,7 @@ namespace PrescriptionOnline.Controllers
 
         public IActionResult Index(int doctorId, int prescriptionId, string filterString)
         {
+            DoctorId = doctorId;
             PrescriptionId = prescriptionId;
 
             var prescriptionDtos = _doctorManager.GetAllPrescriptionForADoctor(doctorId, filterString)
@@ -42,12 +44,12 @@ namespace PrescriptionOnline.Controllers
 
             var dto = _vMMapper.Map(medicineVm);
             _doctorManager.AddNewMedicine(dto, PrescriptionId);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { doctorId = DoctorId ,prescriptionId = PrescriptionId });
         }
         public IActionResult Delete(int medicineId)
         {
             _doctorManager.DeleteMedicine(new MedicineDTO { Id=medicineId});
-            return View();
+            return RedirectToAction("Index", new { doctorId = DoctorId, prescriptionId = PrescriptionId });
         }
 
 

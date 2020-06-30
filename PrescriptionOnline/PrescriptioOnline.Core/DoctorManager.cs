@@ -19,35 +19,35 @@ namespace PrescriptioOnline.Core
             _medicineRepository = medicineRepository;
             _DTOMappers = DTOMappers;
         }
-        public IEnumerable<DoctorDTO> GetAllDoctors(string filterstring)
+        public List<DoctorDTO> GetAllDoctors(string filterstring)
         {
-            var doctorEntities = _doctorRepository.GetAllDoctors();
+            var doctorEntities = _doctorRepository.GetAllDoctors().ToList();
             if (!string.IsNullOrEmpty(filterstring))
             {
                 doctorEntities = doctorEntities
-                    .Where(x => x.FirstName.ToLower().Contains(filterstring.ToLower()) || x.LastName.ToLower().Contains(filterstring.ToLower()));
+                    .Where(x => x.FirstName.ToLower().Contains(filterstring.ToLower()) || x.LastName.ToLower().Contains(filterstring.ToLower())).ToList();
             }
             return _DTOMappers.Map(doctorEntities);
         }
-        public IEnumerable<PrescriptionDTO> GetAllPrescriptionForADoctor(int doctorId, string filterstring)
+        public List<PrescriptionDTO> GetAllPrescriptionForADoctor(int doctorId, string filterstring)
         {
-            var prescriptionEntities = _prescriptionRepository.GetAllPrescriptions().Where(x => x.DoctorId == doctorId);
+            var prescriptionEntities = _prescriptionRepository.GetAllPrescriptions().Where(x => x.DoctorId == doctorId).ToList();
             if (!string.IsNullOrEmpty(filterstring))
             {
                 prescriptionEntities = prescriptionEntities
-                    .Where(x => x.Name.ToLower().Contains(filterstring.ToLower()));
+                    .Where(x => x.Name.ToLower().Contains(filterstring.ToLower())).ToList();
             }
             return _DTOMappers.Map(prescriptionEntities);
         }
-        public IEnumerable<MedicineDTO> GetAllMedicineForAPrescription(int prescriptionId, string filterstring)
+        public List<MedicineDTO> GetAllMedicineForAPrescription(int prescriptionId, string filterstring)
         {
-            var medicineEntities = _medicineRepository.GetAllMedicines().Where(x => x.PrescriptionId == prescriptionId);
+            var medicineEntities = _medicineRepository.GetAllMedicines().Where(x => x.PrescriptionId == prescriptionId).ToList();
             if (!string.IsNullOrEmpty(filterstring))
             {
                 medicineEntities = medicineEntities
                     .Where(x => x.Name.ToLower().Contains(filterstring.ToLower())
                              || x.ActiveSubstance.ToLower().Contains(filterstring.ToLower())
-                             || x.Producent.ToLower().Contains(filterstring.ToLower()));
+                             || x.Producent.ToLower().Contains(filterstring.ToLower())).ToList();
             }
             return _DTOMappers.Map(medicineEntities);
         }

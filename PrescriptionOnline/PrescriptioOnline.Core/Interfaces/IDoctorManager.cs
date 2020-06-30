@@ -10,8 +10,8 @@ namespace PrescriptioOnline.Core
         bool DeleteDoctor(DoctorDTO doctor);
         bool DeleteMedicine(MedicineDTO medicine);
         bool DeletePrescription(PrescriptionDTO prescription);
-        IEnumerable<DoctorDTO> GetAllDoctors(string filterstring);
-        IEnumerable<MedicineDTO> GetAllMedicineForAPrescription(int prescriptionId, string filterstring);
-        IEnumerable<PrescriptionDTO> GetAllPrescriptionForADoctor(int doctorId, string filterstring);
+        List<DoctorDTO> GetAllDoctors(string filterstring);
+        List<MedicineDTO> GetAllMedicineForAPrescription(int prescriptionId, string filterstring);
+        List<PrescriptionDTO> GetAllPrescriptionForADoctor(int doctorId, string filterstring);
     }
 }
