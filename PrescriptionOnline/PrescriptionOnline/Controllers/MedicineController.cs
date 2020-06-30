@@ -10,7 +10,6 @@ namespace PrescriptionOnline.Controllers
     {
         private readonly IDoctorManager _doctorManager;
         private readonly VMMapper _vMMapper;
-        private static int DoctorId { get; set; }
         private static int PrescriptionId { get; set; }
         public MedicineController(IDoctorManager doctorManager, VMMapper vMMapper)
         {
@@ -20,11 +19,12 @@ namespace PrescriptionOnline.Controllers
 
         public IActionResult Index(int doctorId, int prescriptionId, string filterString)
         {
-            DoctorId = doctorId;
             PrescriptionId = prescriptionId;
-            var medicineDtos = _doctorManager.GetAllMedicineForAPrescription(prescriptionId,null);
+
             var prescriptionDtos = _doctorManager.GetAllPrescriptionForADoctor(doctorId, filterString)
                                                  .FirstOrDefault(x=>x.Id==prescriptionId);
+
+            var medicineDtos = _doctorManager.GetAllMedicineForAPrescription(prescriptionId, null);
 
             var prescriptionViewModels = _vMMapper.Map(prescriptionDtos);
             prescriptionViewModels.Medicines = _vMMapper.Map(medicineDtos);

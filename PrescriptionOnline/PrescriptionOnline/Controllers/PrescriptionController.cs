@@ -1,37 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PrescriptionOnline.Models;
+using PrescriptioOnline;
+using PrescriptioOnline.Core;
 using System.Linq;
 
 namespace PrescriptionOnline.Controllers
 {
     public class PrescriptionController : Controller
     {
-        private  static int IndexOfDoctor { get; set; }
-
-        public PrescriptionController()
+        private readonly IDoctorManager _doctorManager;
+        private readonly VMMapper _vMMapper;
+        private static int DoctorId { get; set; }
+        public PrescriptionController(IDoctorManager doctorManager, VMMapper vMMapper)
         {
-
+            _doctorManager = doctorManager;
+            _vMMapper = vMMapper;
         }
 
-        public IActionResult Index(int indexOfDoctor, string filterString)
+        public IActionResult Index(int doctorId, string filterString)
         {
-            IndexOfDoctor = indexOfDoctor;
-            if (string.IsNullOrEmpty(filterString))
-            {
-                return View(TemporaryDatabase.Doctors.ElementAt(indexOfDoctor));
-            }
-            return View(new DoctorViewModel 
-            {
-                Name = TemporaryDatabase.Doctors.ElementAt(indexOfDoctor).Name,
-                Prescriptions = TemporaryDatabase.Doctors.ElementAt(indexOfDoctor)
-                                                 .Prescriptions.Where(x => x.Name.ToLower()
-                                                    .Contains(filterString.ToLower())).ToList()
-            });
+            DoctorId = doctorId;
+            var doctorDtos = _doctorManager.GetAllDoctors(null)
+                                                .FirstOrDefault(x => x.Id == doctorId);
+
+            var prescriptionDtos = _doctorManager.GetAllPrescriptionForADoctor(doctorId, filterString);
+
+            var doctorViewModels = _vMMapper.Map(doctorDtos);
+            doctorViewModels.Prescriptions = _vMMapper.Map(prescriptionDtos);
+
+
+            return View(doctorViewModels);
         }
 
-        public IActionResult View(int indexOfPrescription)
+        public IActionResult View(int prescriptionId)
         {
-            return RedirectToAction("Index", "Medicine", new { indexOfDoctor = IndexOfDoctor, indexOfPrescription = indexOfPrescription }); 
+            return RedirectToAction("Index", "Medicine", new { doctorId = DoctorId, prescriptionId = prescriptionId }); 
         }
         public IActionResult Add()
         {
@@ -40,11 +43,13 @@ namespace PrescriptionOnline.Controllers
         [HttpPost]
         public IActionResult Add(PrescriptionViewModel prescriptionVm)
         {
-            TemporaryDatabase.Doctors.ElementAt(IndexOfDoctor).Prescriptions.Add(prescriptionVm);
+            var dto = _vMMapper.Map(prescriptionVm);
+            _doctorManager.AddNewPrescription(dto, DoctorId);
             return RedirectToAction("Index");
         }
-        public IActionResult Delete(int indexOfPrescription)
+        public IActionResult Delete(int prescriptionId)
         {
+            _doctorManager.DeletePrescription(new PrescriptionDTO { Id = prescriptionId });
             return View();
         }
 
