@@ -1,11 +1,11 @@
 ﻿using PrescriptioOnline.Database;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PrescriptioOnline.Core
 {
+
+
     public class DoctorManager : IDoctorManager
     {
         private readonly IDoctorRepository _doctorRepository;
@@ -51,7 +51,7 @@ namespace PrescriptioOnline.Core
             }
             return _doctorsMappers.Map(medicineEntities);
         }
-        public void AddNewMedicine(MedicineDTO medicine,int prescriptionId)
+        public void AddNewMedicine(MedicineDTO medicine, int prescriptionId)
         {
             var entity = _doctorsMappers.Map(medicine);
             entity.PrescriptionId = prescriptionId;
@@ -64,12 +64,32 @@ namespace PrescriptioOnline.Core
             entity.DoctorId = DoctorId;
             _prescriptionRepository.AddNew(entity);
 
-           
+
         }
         public void AddNewDoctor(DoctorDTO doctor)
         {
             var entity = _doctorsMappers.Map(doctor);
             _doctorRepository.AddNew(entity);
+
+        }
+
+        public bool DeleteMedicine(MedicineDTO medicine)
+        {
+            var entity = _doctorsMappers.Map(medicine);
+            return _medicineRepository.Delete(entity);
+
+        }
+        public bool DeletePrescription(PrescriptionDTO prescription)
+        {
+            var entity = _doctorsMappers.Map(prescription);
+            return _prescriptionRepository.Delete(entity);
+
+
+        }
+        public bool DeleteDoctor(DoctorDTO doctor)
+        {
+            var entity = _doctorsMappers.Map(doctor);
+            return _doctorRepository.Delete(entity);
 
         }
     }
