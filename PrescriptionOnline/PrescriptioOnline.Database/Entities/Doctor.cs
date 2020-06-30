@@ -12,7 +12,7 @@ namespace PrescriptioOnline.Database
         public string PhoneNumber { get; set; }
         public bool IsAbleToMakePrescriptions { get; set; }
         [NotMapped]
-        public virtual List<Prescription> Prescriptions { get; set; }
+        public virtual IEnumerable<Prescription> Prescriptions { get; set; }
 
     }
 }

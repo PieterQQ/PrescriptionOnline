@@ -12,6 +12,6 @@ namespace PrescriptioOnline.Core
 
         public int DoctorId { get; set; }
         public  DoctorDTO Doctor { get; set; }
-        public List<MedicineDTO> Medicines { get; set; }
+        public IEnumerable<MedicineDTO> Medicines { get; set; }
     }
 }

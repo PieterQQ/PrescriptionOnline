@@ -13,6 +13,6 @@ namespace PrescriptioOnline.Database
         public int DoctorId { get; set; }
         public virtual Doctor Doctor { get; set; }
         [NotMapped]
-        public virtual List<Medicine> Medicines { get; set; }
+        public virtual IEnumerable<Medicine> Medicines { get; set; }
     }
 }
