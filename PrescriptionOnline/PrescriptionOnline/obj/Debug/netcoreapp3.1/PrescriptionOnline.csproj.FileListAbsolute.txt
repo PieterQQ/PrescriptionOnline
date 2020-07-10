@@ -76,3 +76,4 @@ C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\Prescript
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\PrescriptionOnline.csproj.CoreCompileInputs.cache
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\PrescriptionOnline.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Pieter\Documents\GitHub\PrescriptionOnline\PrescriptionOnline\PrescriptionOnline\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs

@@ -1,0 +1,13 @@
+﻿@model DoctorViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<form asp-controller="Home" asp-action="Add">
+    First Name:
+    <input type="text" name="FirstName" placeholder="@Model.FirstName" /><br />
+    Last Name:
+    <input type="text" name="LastName" placeholder="@Model.LastName"/><br />
+    Phone Number:
+    <input type="text" name="PhoneNumber" placeholder="@Model.PhoneNumber"/><br />
+    <button type="submit" class="btn btn-danger">Add</button>
+</form>

@@ -4,6 +4,7 @@ using PrescriptioOnline;
 using PrescriptioOnline.Core;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PrescriptionOnline.Controllers
 {
@@ -48,7 +49,12 @@ namespace PrescriptionOnline.Controllers
             var doctorViewModels = _vMMapper.Map(doctorDtos);
             return RedirectToAction("Index");
         }
+       
+        public IActionResult Edit(int doctorId)
+        {
 
+            return View();
+        }
 
 
     }
